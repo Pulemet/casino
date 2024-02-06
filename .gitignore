@@ -1,0 +1,9 @@
+# зависимости проекта
+/node_modules
+
+# файл с токеном
+token.txt
+
+# логи
+success.log
+error.log
