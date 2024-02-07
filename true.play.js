@@ -34,12 +34,13 @@ class TruePlay
             programId: programId,
             useMaxAmount: true
         });
+        stackingRequest.responseType = 'json';
 
         stackingRequest.onload = () => {
             if (stackingRequest.status != 201) {
                 Helper.writeLog(errorLogFile, `${new Date().toUTCString()} - Error ${stackingRequest.status}: ${stackingRequest.statusText}\r\n`);
             } else {
-                Helper.writeLog(successLogFile, `${new Date().toUTCString()} - Stake was created successfully. Response = ${stackingRequest.response}.\r\n`);
+                Helper.writeLog(successLogFile, `${new Date().toUTCString()} - Stake was created successfully. Amount = ${stackingRequest.response.amount}.\r\n`);
             }
         };
 
